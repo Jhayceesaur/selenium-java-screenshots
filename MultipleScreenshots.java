@@ -17,12 +17,14 @@ public class MultipleScreenshots
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://ph.jobstreet.com/");
-		takeScreenshot(driver, "Step1_AccessEmployeebPage");
+		takeScreenshot(driver, "Step1_AccessEmployeebPage"); //Screenshot syntax for each step
 
 		driver.findElement(By.xpath("(//span[normalize-space()='Employer site'])[2]")).click();
 		Thread.sleep(3000);
-		takeScreenshot(driver, "Step2_AccessEmployerPage");
+		takeScreenshot(driver, "Step2_AccessEmployerPage"); //Screenshot syntax for each step
 	}
+	
+	//Screenshot syntax in new block / method
 	public static void takeScreenshot(WebDriver driver, String screenshotName) {
 	    File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 	    String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
